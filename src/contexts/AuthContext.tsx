@@ -57,6 +57,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Login function
   const login = async (email: string, password: string, role: 'student' | 'tutor') => {
     setLoading(true);
+    console.log(password)
     
     try {
       // Simulate API call
@@ -85,6 +86,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Register function
   const register = async (name: string, email: string, password: string, role: 'student' | 'tutor') => {
     setLoading(true);
+    console.log(password)
     
     try {
       // Simulate API call
