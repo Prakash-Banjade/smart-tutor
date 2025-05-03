@@ -30,7 +30,7 @@ const RegisterPage: React.FC = () => {
 
     try {
       await register(name, email, password, role);
-      navigate(role === 'student' ? '/student' : '/tutor');
+      navigate(role === 'student' ? '/student/onboarding' : '/tutor/onboarding');
     } catch (err) {
       setError('Failed to create an account. Please try again.');
       console.error(err);

@@ -7,6 +7,25 @@ interface User {
   email: string;
   role: 'student' | 'tutor';
   avatar?: string;
+  age?: number;
+  subjects?: string[];
+  educationLevel?: string;
+  qualification?: string;
+  teachingExperience?: number;
+  bio?: string;
+  onboardingCompleted?: boolean;
+  needsOnboarding?: boolean;
+}
+
+interface UserProfile {
+  age?: number;
+  subjects?: string[];
+  educationLevel?: string;
+  qualification?: string;
+  teachingExperience?: number;
+  bio?: string;
+  onboardingCompleted?: boolean;
+  needsOnboarding?: boolean;
 }
 
 interface AuthContextType {
@@ -15,6 +34,7 @@ interface AuthContextType {
   login: (email: string, password: string, role: 'student' | 'tutor') => Promise<void>;
   register: (name: string, email: string, password: string, role: 'student' | 'tutor') => Promise<void>;
   logout: () => void;
+  updateUserProfile: (profile: UserProfile) => Promise<void>;
 }
 
 // Create context
@@ -49,7 +69,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         name: role === 'student' ? 'Student Name' : 'Tutor Name',
         email,
         role,
-        avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        needsOnboarding: false // Existing users don't need onboarding
       };
       
       setUser(mockUser);
@@ -76,7 +97,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         name,
         email,
         role,
-        avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        needsOnboarding: true // New users need onboarding
       };
       
       setUser(mockUser);
@@ -84,6 +106,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (error) {
       console.error('Registration failed:', error);
       throw new Error('Registration failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Update user profile function
+  const updateUserProfile = async (profile: UserProfile) => {
+    setLoading(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      if (!user) {
+        throw new Error('No user logged in');
+      }
+
+      const updatedUser = {
+        ...user,
+        ...profile
+      };
+      
+      setUser(updatedUser);
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+    } catch (error) {
+      console.error('Profile update failed:', error);
+      throw new Error('Failed to update profile. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -100,7 +149,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     loading,
     login,
     register,
-    logout
+    logout,
+    updateUserProfile
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

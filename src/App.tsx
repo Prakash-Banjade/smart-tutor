@@ -22,6 +22,8 @@ import TutorSchedule from './pages/tutor/Schedule';
 import TutorMessages from './pages/tutor/Messages';
 import TutorStudents from './pages/tutor/Students';
 import NotFoundPage from './pages/NotFoundPage';
+import StudentOnboardingPage from './pages/student/OnboardingPage';
+import TutorOnboardingPage from './pages/tutor/OnboardingPage';
 
 const App: React.FC = () => {
   const { loading } = useAuth();
@@ -60,6 +62,16 @@ const App: React.FC = () => {
         <Route path="profile" element={<StudentProfile />} />
       </Route>
 
+      {/* Student onboarding route */}
+      <Route
+        path="/student/onboarding"
+        element={
+          <ProtectedRoute userRole="student">
+            <StudentOnboardingPage />
+          </ProtectedRoute>
+        }
+      />
+
       {/* Tutor protected routes */}
       <Route
         path="/tutor"
@@ -75,6 +87,17 @@ const App: React.FC = () => {
         <Route path="students" element={<TutorStudents />} />
         <Route path="profile" element={<TutorProfile />} />
       </Route>
+
+      {/* Tutor onboarding route */}
+      <Route
+        path="/tutor/onboarding"
+        element={
+          <ProtectedRoute userRole="tutor">
+            <TutorOnboardingPage />
+          </ProtectedRoute>
+        }
+      />
+
 
       {/* 404 page */}
       <Route path="*" element={<NotFoundPage />} />
@@ -97,6 +120,11 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, userRole }) =
 
   if (user.role !== userRole) {
     return <Navigate to={user.role === 'student' ? '/student' : '/tutor'} />;
+  }
+
+  // Only redirect to onboarding if the user needs onboarding and isn't already on the onboarding page
+  if (user.needsOnboarding && !window.location.pathname.includes('/onboarding')) {
+    return <Navigate to={`/${user.role}/onboarding`} />;
   }
 
   return <>{children}</>;
