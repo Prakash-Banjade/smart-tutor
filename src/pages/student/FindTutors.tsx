@@ -5,10 +5,8 @@ import {
   Star, 
   Clock, 
   MapPin, 
-  DollarSign, 
   BookOpen,
   Monitor,
-  Users
 } from 'lucide-react';
 
 // Define tutor type

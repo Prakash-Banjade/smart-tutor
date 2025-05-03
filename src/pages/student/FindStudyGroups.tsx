@@ -6,7 +6,6 @@ import {
   Users, 
   Calendar, 
   Clock, 
-  BookOpen,
   GraduationCap
 } from 'lucide-react';
 

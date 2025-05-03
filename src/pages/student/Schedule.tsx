@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, User } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 import { format } from 'date-fns';
 
 const StudentSchedule: React.FC = () => {

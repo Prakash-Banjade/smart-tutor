@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { 
-  User, 
   Mail, 
   Phone, 
   MapPin, 
-  BookOpen, 
   Award,
   Clock,
   DollarSign,

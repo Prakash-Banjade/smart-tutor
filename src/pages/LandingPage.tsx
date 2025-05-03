@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Search, Users, Calendar, Star, ChevronRight } from 'lucide-react';
+import { Search, Users, Calendar, Star, ChevronRight } from 'lucide-react';
 
 const LandingPage: React.FC = () => {
   return (

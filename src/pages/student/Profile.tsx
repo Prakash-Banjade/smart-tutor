@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { 
-  User, 
   Mail, 
   Phone, 
   MapPin, 
   BookOpen, 
-  Calendar, 
-  Clock,
   Edit3, 
   Save
 } from 'lucide-react';

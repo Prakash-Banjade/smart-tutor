@@ -2,13 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { 
-  User, 
-  Users, 
   Calendar, 
   Clock, 
   DollarSign, 
   TrendingUp, 
-  BookOpen,
   Star
 } from 'lucide-react';
 import { format } from 'date-fns';
