@@ -31,8 +31,8 @@ interface UserProfile {
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (email: string, role: 'student' | 'tutor') => Promise<void>;
-  register: (name: string, email: string, role: 'student' | 'tutor') => Promise<void>;
+  login: (email: string, password: string, role: 'student' | 'tutor') => Promise<void>;
+  register: (name: string, email: string, password: string, role: 'student' | 'tutor') => Promise<void>;
   logout: () => void;
   updateUserProfile: (profile: UserProfile) => Promise<void>;
 }
@@ -45,7 +45,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Mock authentication for demo purposes
   useEffect(() => {
     // Check if user is logged in (localStorage in this mock example)
     const storedUser = localStorage.getItem('user');
@@ -56,7 +55,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   // Login function
-  const login = async (email: string, role: 'student' | 'tutor') => {
+  const login = async (email: string, password: string, role: 'student' | 'tutor') => {
     setLoading(true);
     
     try {
@@ -84,7 +83,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   // Register function
-  const register = async (name: string, email: string, role: 'student' | 'tutor') => {
+  const register = async (name: string, email: string, password: string, role: 'student' | 'tutor') => {
     setLoading(true);
     
     try {
