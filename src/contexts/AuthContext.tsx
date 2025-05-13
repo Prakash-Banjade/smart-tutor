@@ -20,6 +20,7 @@ interface User {
 interface UserProfile {
   age?: number;
   subjects?: string[];
+  subtopics?: string[];
   educationLevel?: string;
   qualification?: string;
   teachingExperience?: number;

@@ -24,6 +24,9 @@ import TutorStudents from './pages/tutor/Students';
 import NotFoundPage from './pages/NotFoundPage';
 import StudentOnboardingPage from './pages/student/OnboardingPage';
 import TutorOnboardingPage from './pages/tutor/OnboardingPage';
+import CreateSession from './pages/tutor/CreateSession';
+import CreateStudyGroup from './pages/student/CreateStudyGroup';
+
 
 const App: React.FC = () => {
   const { loading } = useAuth();
@@ -60,6 +63,8 @@ const App: React.FC = () => {
         <Route path="schedule" element={<StudentSchedule />} />
         <Route path="messages" element={<StudentMessages />} />
         <Route path="profile" element={<StudentProfile />} />
+        <Route path="create-study-group" element = {<CreateStudyGroup />} />
+        
       </Route>
 
       {/* Student onboarding route */}
@@ -86,6 +91,7 @@ const App: React.FC = () => {
         <Route path="messages" element={<TutorMessages />} />
         <Route path="students" element={<TutorStudents />} />
         <Route path="profile" element={<TutorProfile />} />
+        <Route path="create-session" element={<CreateSession />} />
       </Route>
 
       {/* Tutor onboarding route */}

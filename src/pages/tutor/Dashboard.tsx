@@ -14,95 +14,98 @@ const TutorDashboard: React.FC = () => {
   const { user } = useAuth();
 
   // Mock data
-  const upcomingSessions = [
-    {
-      id: 1,
-      subject: 'Calculus II',
-      studentName: 'Emily Johnson',
-      studentAvatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      date: new Date(2025, 6, 15, 14, 0),
-      duration: 60,
-      location: 'Online (Zoom)',
-    },
-    {
-      id: 2,
-      subject: 'Linear Algebra',
-      studentName: 'Chris Thompson',
-      studentAvatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      date: new Date(2025, 6, 17, 10, 30),
-      duration: 90,
-      location: 'University Library, Room 302',
-    },
-    {
-      id: 3,
-      subject: 'Differential Equations',
-      studentName: 'Sophia Martinez',
-      studentAvatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      date: new Date(2025, 6, 18, 15, 45),
-      duration: 60,
-      location: 'Online (Zoom)',
-    },
-  ];
+const upcomingSessions = [
+  {
+    id: 1,
+    subject: 'Calculus II',
+    studentName: 'Anjali Shrestha',
+    studentAvatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: new Date(2025, 6, 15, 14, 0),
+    duration: 12,
+    location: 'Online (Zoom)',
+  },
+  {
+    id: 2,
+    subject: 'Linear Algebra',
+    studentName: 'Suman Gautam',
+    studentAvatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: new Date(2025, 6, 17, 10, 30),
+    duration: 10,
+    location: 'Cafe Soma, Kathmandu',
+  },
+  {
+    id: 3,
+    subject: 'Differential Equations',
+    studentName: 'Bishnu Karki',
+    studentAvatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: new Date(2025, 6, 18, 15, 45),
+    duration: 9,
+    location: 'Horizon Café, Butwal',
+  },
+];
 
-  const recentStudents = [
-    {
-      id: 1,
-      name: 'Emily Johnson',
-      avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      lastSession: new Date(2025, 6, 10, 14, 0),
-      subject: 'Calculus II',
-      sessionsCount: 5,
-    },
-    {
-      id: 2,
-      name: 'Chris Thompson',
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      lastSession: new Date(2025, 6, 12, 10, 30),
-      subject: 'Linear Algebra',
-      sessionsCount: 3,
-    },
-    {
-      id: 3,
-      name: 'Sophia Martinez',
-      avatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      lastSession: new Date(2025, 6, 8, 15, 45),
-      subject: 'Differential Equations',
-      sessionsCount: 1,
-    },
-    {
-      id: 4,
-      name: 'Daniel Kim',
-      avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      lastSession: new Date(2025, 6, 5, 13, 0),
-      subject: 'Physics 101',
-      sessionsCount: 2,
-    },
-  ];
 
-  const recentReviews = [
-    {
-      id: 1,
-      studentName: 'Emily Johnson',
-      studentAvatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      rating: 5,
-      comment: 'Excellent tutor! Really helped me understand calculus concepts that I had been struggling with for months.',
-      date: new Date(2025, 6, 11),
-    },
-    {
-      id: 2,
-      studentName: 'Chris Thompson',
-      studentAvatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      rating: 4,
-      comment: 'Very knowledgeable and patient. Explains complex concepts clearly.',
-      date: new Date(2025, 6, 10),
-    },
-  ];
+const recentStudents = [
+  {
+    id: 1,
+    name: 'Anjali Shrestha',
+    avatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    lastSession: new Date(2025, 6, 10, 14, 0),
+    subject: 'Calculus II',
+    sessionsCount: 5,
+  },
+  {
+    id: 2,
+    name: 'Suman Gautam',
+    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    lastSession: new Date(2025, 6, 12, 10, 30),
+    subject: 'Linear Algebra',
+    sessionsCount: 3,
+  },
+  {
+    id: 3,
+    name: 'Bishnu Karki',
+    avatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    lastSession: new Date(2025, 6, 8, 15, 45),
+    subject: 'Differential Equations',
+    sessionsCount: 1,
+  },
+  {
+    id: 4,
+    name: 'Puja Dhakal',
+    avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    lastSession: new Date(2025, 6, 5, 13, 0),
+    subject: 'Physics 101',
+    sessionsCount: 2,
+  },
+];
+
+
+const recentReviews = [
+  {
+    id: 1,
+    studentName: 'Anjali Shrestha',
+    studentAvatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    rating: 5,
+    comment: 'Excellent tutor! Really helped me understand calculus concepts that I had been struggling with for months.',
+    date: new Date(2025, 6, 11),
+  },
+  {
+    id: 2,
+    studentName: 'Suman Gautam',
+    studentAvatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    rating: 4,
+    comment: 'Very knowledgeable and patient. Explains complex concepts clearly.',
+    date: new Date(2025, 6, 10),
+  },
+];
+
 
   // Calculate earnings and stats
   const currentMonthEarnings = 450;
   const previousMonthEarnings = 380;
-  const earningsChange = ((currentMonthEarnings - previousMonthEarnings) / previousMonthEarnings) * 100;
-  const totalHours = 12;
+  // const earningsChange = ((currentMonthEarnings - previousMonthEarnings) / previousMonthEarnings) * 100;
+  // const totalHours = 12;
   const averageRating = 4.8;
 
   return (
@@ -113,7 +116,7 @@ const TutorDashboard: React.FC = () => {
       </div>
 
       {/* Stats overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-blue-100 mr-4">
@@ -126,7 +129,7 @@ const TutorDashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        {/* <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
             <div className="p-3 rounded-full bg-green-100 mr-4">
               <DollarSign className="h-6 w-6 text-green-600" />
@@ -156,7 +159,7 @@ const TutorDashboard: React.FC = () => {
               <p className="text-2xl font-semibold text-gray-900">{totalHours}</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">
