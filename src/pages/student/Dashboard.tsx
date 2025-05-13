@@ -16,69 +16,70 @@ const StudentDashboard: React.FC = () => {
 
   // Mock data
   const upcomingSessions = [
-    {
-      id: 1,
-      subject: 'Calculus II',
-      tutorName: 'Dr. Sarah Johnson',
-      tutorAvatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      date: new Date(2025, 6, 15, 14, 0),
-      duration: 60,
-      location: 'Online (Zoom)',
-    },
-    {
-      id: 2,
-      subject: 'Physics 101',
-      tutorName: 'Prof. Michael Chen',
-      tutorAvatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      date: new Date(2025, 6, 17, 10, 30),
-      duration: 90,
-      location: 'University Library, Room 302',
-    },
-  ];
+  {
+    id: 1,
+    subject: 'Calculus II',
+    tutorName: 'Dr. Arjun Bhatt',
+    tutorAvatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: new Date(2025, 6, 15, 14, 0),
+    duration: 10, // Duration less than 15 minutes
+    location: 'Online (Zoom)', // Zoom for online session
+  },
+  {
+    id: 2,
+    subject: 'Physics 101',
+    tutorName: 'Prof. Michael Chen',
+    tutorAvatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: new Date(2025, 6, 17, 10, 30),
+    duration: 10, // Duration less than 15 minutes
+    location: 'Tribhuvan University, Science Bhawan, Room 302', // Nepali location in English letters
+  },
+];
 
-  const studyGroups = [
-    {
-      id: 1,
-      name: 'Calculus Study Group',
-      subject: 'Mathematics',
-      members: 5,
-      maxMembers: 8,
-      nextMeeting: new Date(2025, 6, 16, 16, 0),
-      location: 'University Library',
-    },
-    {
-      id: 2,
-      name: 'Biology Research Group',
-      subject: 'Biology',
-      members: 6,
-      maxMembers: 6,
-      nextMeeting: new Date(2025, 6, 18, 15, 0),
-      location: 'Science Building, Room 120',
-    },
-  ];
+const studyGroups = [
+  {
+    id: 1,
+    name: 'Calculus Study Group',
+    subject: 'Mathematics',
+    members: 5,
+    maxMembers: 8,
+    nextMeeting: new Date(2025, 6, 16, 16, 0),
+    location: 'Public Pustakalaya', // Nepali location in English letters
+  },
+  {
+    id: 2,
+    name: 'Biology Research Group',
+    subject: 'Biology',
+    members: 6,
+    maxMembers: 6,
+    nextMeeting: new Date(2025, 6, 18, 15, 0),
+    location: 'Vigyan Bhawan, Room 120', // Nepali location in English letters
+  },
+];
 
-  const recentActivity = [
-    {
-      id: 1,
-      type: 'session-completed',
-      subject: 'Algebra',
-      tutorName: 'Jamie Rodriguez',
-      date: new Date(2025, 6, 10, 13, 0),
-    },
-    {
-      id: 2,
-      type: 'group-joined',
-      groupName: 'Physics Study Group',
-      date: new Date(2025, 6, 12, 9, 30),
-    },
-    {
-      id: 3,
-      type: 'session-booked',
-      subject: 'Calculus II',
-      tutorName: 'Dr. Sarah Johnson',
-      date: new Date(2025, 6, 13, 16, 45),
-    },
-  ];
+const recentActivity = [
+  {
+    id: 1,
+    type: 'session-completed',
+    subject: 'Algebra',
+    tutorName: 'Jamie Rodriguez',
+    date: new Date(2025, 6, 10, 13, 0),
+  },
+  {
+    id: 2,
+    type: 'group-joined',
+    groupName: 'Physics Study Group',
+    date: new Date(2025, 6, 12, 9, 30),
+  },
+  {
+    id: 3,
+    type: 'session-booked',
+    subject: 'Calculus II',
+    tutorName: 'Dr. Arjun Bhatt',
+    date: new Date(2025, 6, 13, 16, 45),
+  },
+];
+
 
   return (
     <div>
@@ -88,7 +89,7 @@ const StudentDashboard: React.FC = () => {
       </div>
 
       {/* Stats overview */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white rounded-lg shadow p-6 flex items-center">
           <div className="p-3 rounded-full bg-blue-100 mr-4">
             <Calendar className="h-6 w-6 text-blue-600" />
@@ -109,7 +110,7 @@ const StudentDashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 flex items-center">
+        {/* <div className="bg-white rounded-lg shadow p-6 flex items-center">
           <div className="p-3 rounded-full bg-purple-100 mr-4">
             <Clock className="h-6 w-6 text-purple-600" />
           </div>
@@ -117,7 +118,7 @@ const StudentDashboard: React.FC = () => {
             <p className="text-sm font-medium text-gray-600">Study Hours (This Month)</p>
             <p className="text-2xl font-semibold text-gray-900">12.5</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Quick actions */}
@@ -134,6 +135,14 @@ const StudentDashboard: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold">Join a Study Group</h3>
             <p className="text-teal-100 mt-1">Connect with other students in your area</p>
+          </div>
+          <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+        </Link>
+
+        <Link to="/student/create-study-group" className="bg-gradient-to-r bg-gray-500 rounded-lg shadow p-6 text-white flex items-center justify-between group">
+          <div>
+            <h3 className="text-lg font-semibold">Create a Study Group</h3>
+            <p className="text-teal-100 mt-1">Create a study group in a specific topic.</p>
           </div>
           <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
         </Link>

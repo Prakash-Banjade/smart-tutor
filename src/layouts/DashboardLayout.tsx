@@ -35,13 +35,16 @@ const DashboardLayout: React.FC = () => {
       { name: 'Dashboard', icon: <BookOpen size={20} />, href: '/student' },
       { name: 'Find Tutors', icon: <Search size={20} />, href: '/student/find-tutors' },
       { name: 'Find Study Groups', icon: <Users size={20} />, href: '/student/find-study-groups' },
+      { name: 'Create Study Group', icon: <MessageSquare size={20} />, href: '/student/create-study-group' },
       { name: 'My Schedule', icon: <Calendar size={20} />, href: '/student/schedule' },
       { name: 'Messages', icon: <MessageSquare size={20} />, href: '/student/messages' },
+      
     ]
     : [
       { name: 'Dashboard', icon: <BookOpen size={20} />, href: '/tutor' },
       { name: 'My Students', icon: <Users size={20} />, href: '/tutor/students' },
       { name: 'Schedule', icon: <Calendar size={20} />, href: '/tutor/schedule' },
+      { name: 'Create Session', icon: <Calendar size={20} />, href: '/tutor/create-session' },
       { name: 'Messages', icon: <MessageSquare size={20} />, href: '/tutor/messages' },
     ];
 
