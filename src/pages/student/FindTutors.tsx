@@ -277,7 +277,7 @@ const FindTutors: React.FC = () => {
         {/* Advanced filters */}
         {filtersOpen && (
           <div className="mt-4 grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Price range */}
+            Price range
             <div>
               <label htmlFor="price-range" className="block text-sm font-medium text-gray-700 mb-1">
                 Price Range (per hour)
@@ -395,7 +395,7 @@ const FindTutors: React.FC = () => {
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-medium text-gray-900">{tutor.name}</h3>
-                    <p className="text-lg font-semibold text-gray-900">${tutor.price}/hr</p>
+                    {/* <p className="text-lg font-semibold text-gray-900">${tutor.price}/hr</p> */}
                   </div>
                   <div className="flex items-center mt-1">
                     <div className="flex items-center">
